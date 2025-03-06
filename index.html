@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="board">
+            <div class="head-title">
+                <h4>To Do</h4> 
+                <span id="todo-board-item-count">0</span>
+            </div>
+            <div class="tasks" id="todo-board">
+                <!-- <p class="task-item" draggable="true">task 1</p> -->
+                
+            </div>
+            <div class="add-task-btn">
+                <button id="add-task-btn-todo">+Add Task</button>
+
+            </div>
+        </div>
+        <div class="board">
+            <div class="head-title">
+                <h4>IN PROGRESS</h4>
+                <span id="progress-board-item-count">0</span>
+            </div>
+            <div class="tasks" id="progress-board">
+                
+            </div>
+            <div class="add-task-btn">
+                <button id="add-task-btn-progress">+Add Task</button>
+            </div>
+        </div>
+        <div class="board">
+            <div class="head-title">
+                <h4>DONE</h4>
+                <span id="done-board-item-count">0</span>
+            </div>
+            <div class="tasks" id="done-board">
+             
+            </div>
+            <div class="add-task-btn">
+                <button id="add-task-btn-done">+Add Task</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
