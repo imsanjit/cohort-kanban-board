@@ -1,13 +1,15 @@
-const addTaskbtnTodo = document.getElementById('add-task-btn-todo');
-const addTaskbtnProgeress = document.getElementById('add-task-btn-progress');
-const addTaskbtnDone = document.getElementById('add-task-btn-done');
-const todoboard = document.getElementById('todo-board');
-const progressboard = document.getElementById('progress-board');
-const doneboard = document.getElementById('done-board');
-const allboards = document.querySelectorAll('.tasks');
+const addTaskBtnTodo = document.getElementById('add-task-btn-todo');
+const addTaskBtnProgress = document.getElementById('add-task-btn-progress');
+const addTaskBtnDone = document.getElementById('add-task-btn-done');
+const todoBoard = document.getElementById('todo-board');
+const progressBoard = document.getElementById('progress-board');
+const doneBoard = document.getElementById('done-board');
+const allBoards = document.querySelectorAll('.tasks');
 const todoBoardItemCount = document.getElementById('todo-board-item-count');
 const progressBoardItemCount = document.getElementById('progress-board-item-count');
 const doneBoardItemCount = document.getElementById('done-board-item-count');
+
+
 
 function createTaskElement(text) {
     const taskCard = document.createElement('p');
@@ -27,49 +29,48 @@ function createTaskElement(text) {
 }
 
 
-addTaskbtnTodo.addEventListener('click', () => {
+addTaskBtnTodo.addEventListener('click', () => {
     const todoInput = prompt('Enter the task you want to add');
     if (!todoInput) {
         return;
     }
     const taskCard = createTaskElement(todoInput);
-    todoboard.appendChild(taskCard);
+    todoBoard.appendChild(taskCard);
 
-    todoBoardItemCount.innerText = todoboard.children.length;
+    todoBoardItemCount.innerText = todoBoard.children.length;
 
 });
 
 
-addTaskbtnProgeress.addEventListener('click', () => {
+addTaskBtnProgress.addEventListener('click', () => {
     const progressInput = prompt('Enter the task you want to add');
     if (!progressInput) {
         return;
     }
     const taskCard = createTaskElement(progressInput);
-    progressboard.appendChild(taskCard);
+    progressBoard.appendChild(taskCard);
 
-    progressBoardItemCount.innerText = progressboard.children.length;
+    progressBoardItemCount.innerText = progressBoard.children.length;
 });
 
 
-addTaskbtnDone.addEventListener('click', () => {
+addTaskBtnDone.addEventListener('click', () => {
     const doneInput = prompt('Enter the task you want to add');
     if (!doneInput) {
         return;
     }
     const taskCard = createTaskElement(doneInput);
-    doneboard.appendChild(taskCard);
-    doneBoardItemCount.innerText = doneboard.children.length;
+    doneBoard.appendChild(taskCard);
+    doneBoardItemCount.innerText = doneBoard.children.length;
 });
 
 
-
-allboards.forEach((boarditem) => {
-    boarditem.addEventListener('dragover', (event) => {
+allBoards.forEach((boardItem) => {
+    boardItem.addEventListener('dragover', (event) => {
         event.preventDefault();
         const currentDragging = document.querySelector('.dragging');
         if (currentDragging) {
-            boarditem.appendChild(currentDragging);
+            boardItem.appendChild(currentDragging);
         }
     });
 });
